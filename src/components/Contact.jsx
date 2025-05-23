@@ -1,48 +1,35 @@
 import React from "react";
 
 const Contact = () => {
-  const contact_info = [
-    { logo: "mail", text: "codeaprogram@gmail.com" },
-    { logo: "logo-whatsapp", text: "123 456 780" },
-    {
-      logo: "location",
-      text: "demo location",
-    },
+  const socialMediaLinks = [
+    { logo: "logo-facebook", url: "https://www.facebook.com/Ciscooooooooo",label: "Facebook" },
+    { logo: "mail", url: "mailto:mfbautista@tip.edu.ph", label: "Email" },
+    { logo: "logo-instagram", url: "https://www.instagram.com/ciscooo717?igsh=cjQ4Z28xcmVlYzYy", label: "Instagram" },
+    { logo: "logo-linkedin", url: "https://www.linkedin.com/in/francisco-bautista-iii-1a764b353",label: "LinkedIn" },
+    { logo: "logo-whatsapp", url: "https://wa.me/639922489030", label: "WhatsApp" },
   ];
+
   return (
-    <section id="contact" className="py-10 px-3 text-white">
+    <section id="contact" className="py-10 px-3 bg-[#DCD7C9] text-[#38470B] flex items-center justify-center">
       <div className="text-center mt-8">
         <h3 className="text-4xl font-semibold">
-          Contact <span className="text-cyan-600">Me</span>
+          Connect with <span className="text-[#F1D6AB]">Me</span>
         </h3>
-        <p className="text-gray-400 mt-3 text-lg">Get in touch</p>
+        <p className="text-[#A0855B] mt-3 text-lg">Follow me on social media</p>
 
-        <div
-          className="mt-16 flex md:flex-row flex-col
-         gap-6 max-w-5xl bg-gray-800 md:p-6 p-2 rounded-lg mx-auto"
-        >
-          <form className="flex flex-col flex-1 gap-5">
-            <input type="text" placeholder="Your Name" />
-            <input type="Email" placeholder="Your Email Address" />
-            <textarea placeholder="Your Message" rows={10}></textarea>
-            <button className="btn-primary w-fit">Send Message</button>
-          </form>
-          <div className="flex flex-col  gap-7 ">
-            {contact_info.map((contact, i) => (
-              <div
-                key={i}
-                className="flex flex-row  
-                  text-left gap-4 flex-wrap items-center"
-              >
-                <div className="min-w-[3.5rem]  text-3xl min-h-[3.5rem] flex items-center justify-center text-white bg-cyan-600 rounded-full">
-                  <ion-icon name={contact.logo}></ion-icon>
-                </div>
-                <p className="md:text-base text-sm  break-words">
-                  {contact.text}
-                </p>
-              </div>
-            ))}
-          </div>
+        <div className="mt-8 flex flex-wrap justify-center gap-6 max-w-7xl w-full mx-auto">
+          {socialMediaLinks.map((social, i) => (
+            <a 
+              key={i} 
+              href={social.url} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bubble flex items-center justify-center w-16 h-16 rounded-full bg-[#A0855B] text-white text-2xl hover:bg-[#F1D6AB] transition duration-300"
+              aria-label={social.label}
+            >
+              <ion-icon name={social.logo}></ion-icon>
+            </a>
+          ))}
         </div>
       </div>
     </section>
